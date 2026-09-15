@@ -28,3 +28,4 @@ region = "us-east-1"
 bucket = "harshi-monobucket"
 key = "prod/terraform.tfstate"
 }
+}
