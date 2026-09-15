@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "one" {
-  bucket = "harshi-monobucket"
+  bucket = "harshi-monobucket.prod"
 }
 
 resource "aws_s3_bucket_ownership_controls" "two" {
@@ -25,7 +25,7 @@ status = "Enabled"
 terraform {
 backend "s3" {
 region = "us-east-1"
-bucket = "harshi-monobucket"
+bucket = "harshi-monobucket.prod"
 key = "prod/terraform.tfstate"
 }
 }
