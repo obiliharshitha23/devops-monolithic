@@ -1,5 +1,5 @@
 resource "aws_launch_template" "web_server_as" {
-    name = "myproject"
+    name = "myproject-template"
     image_id           = "ami-0b6d9d3d33ba97d99"
     vpc_security_group_ids = [aws_security_group.web_server.id]
     instance_type = "t3.micro"
@@ -13,7 +13,7 @@ resource "aws_launch_template" "web_server_as" {
 
 
   resource "aws_elb" "web_server_lb"{
-     name = "web-server-lb"
+     name = "my-harshi-lb"
      security_groups = [aws_security_group.web_server.id]
      subnets = ["subnet-03c0ad0f3a79f1efd", "subnet-0a2c22b26f9c5055d"]
      listener {
@@ -27,7 +27,7 @@ resource "aws_launch_template" "web_server_as" {
     }
   }
 resource "aws_autoscaling_group" "web_server_asg" {
-    name                 = "web-server-asg"
+    name                 = "my-harshi-asg"
     min_size             = 1
     max_size             = 3
     desired_capacity     = 2
