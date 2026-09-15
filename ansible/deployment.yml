@@ -10,10 +10,10 @@
 
   tasks:
     - name: install web server
-      yum: name=httpd state=present
+      yum: name=apache2 state=present
 
     - name: start webserver
-      service: name=httpd state=started
+      service: name=apache state=started
 
     - name: install git
       yum: name=git state=present
