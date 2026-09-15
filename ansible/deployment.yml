@@ -10,13 +10,13 @@
 
   tasks:
     - name: install web server
-      yum: name=apache2 state=present
+      apt: name=apache2 state=present
 
     - name: start webserver
       service: name=apache state=started
 
     - name: install git
-      yum: name=git state=present
+      apt: name=git state=present
 
     - name: Delete existing directory
       file:
